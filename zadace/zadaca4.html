@@ -7,12 +7,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="card">
-            <div class="card card-zagreb">
-             <h2>Informacije o gradu</h2>
+        <div class="cards-container"> 
+        <div class="card card-zagreb">
+            <h2>Informacije o gradu</h2>
             <p><strong>Naziv:</strong> Zagreb</p>
             <p><strong>Država:</strong> Hrvatska</p>
             <p><strong>Populacija:</strong> ~800,000</p>
+            <p class="dodatne-informacije">
+            <a href="https://hr.wikipedia.org/wiki/Zagreb" target="_blank">Dodatne informacije</a>
+        </p>
+     </div>
 
             <p class="dodatne-informacije">
                 <a href="https://hr.wikipedia.org/wiki/Zagreb" target="_blank">Dodatne informacije</a>
@@ -43,8 +47,9 @@
         <div class="horizontal-bar"></div>
         <div class="vertical-bar"></div>
     </div>
-
+    <h3 style="text-align: center; margin-bottom: 50px;">Slika 1. Zastava Švedske</h3>
 </body>
+
 <style>
     body{ 
         font-family: Arial, sans-serif;
@@ -52,10 +57,12 @@
         padding: 20px;
     }
     .cards-container {
-    display: flex; 
-    flex-wrap: wrap; 
-    gap: 20px; 
-    margin-bottom: 50px;
+        display: flex; /* Omogućuje horizontalni raspored */
+        flex-wrap: wrap; 
+        gap: 20px; /* Dodaje razmak između kartica */
+        margin-bottom: 50px; /* Razmak između kartica i zastave */
+        justify-content: center;
+        text-align: center; /* Centriranje h2 naslova */
     }    
 
     .card {
@@ -85,11 +92,7 @@
     color: #000080;
     margin-top: 0;
     margin-bottom: 15px;
-    display: inline-block;
-}
-
-.card {
-    text-align: center; 
+    display: inline-block; /* Za centriranje unutar .card */
 }
 
 .card p {
@@ -111,21 +114,13 @@
 }
 
 .flag-container {
-    margin-top: 50px;
+    margin: 50px auto 10px auto; /* Centriranje zastave horizontalno */
     position: relative;
     width: 450px; 
     height: 280px; 
     background-color: #006AA7; 
     border: 1px solid #333;
 }
-.flag-container {
-    position: relative;
-    width: 450px; 
-    height: 280px; 
-    background-color: #006AA7; 
-    border: 1px solid #333;
-    margin-left: 20px;
-    }
 
 .horizontal-bar {
     position: absolute;
@@ -141,8 +136,7 @@
     width: 56px; 
     height: 100%;
     background-color: #FECC00; 
-    left: 35%; 
-    transform: translateX(-50%); 
+    left: 100px;
 }
 </style>
 </html>
