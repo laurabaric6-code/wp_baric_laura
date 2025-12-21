@@ -1,0 +1,64 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 20px;
+}
+
+.main-content {
+    background-color: #ECEFF1;
+    padding: 20px;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    color: #4CAF50;
+}
+
+main {
+    background-color: #ECEFF1;
+    padding: 20px;
+}
+
+.paragraf-1 {
+    font-size: 16px;
+    color: #37474F;
+}
+
+.paragraf-2 {
+    font-size: 18px;
+    color: #546E7A;
+}
+
+.paragraf-3 {
+    font-size: 20px;
+    color: #78909C;
+}
+
+ul {
+    padding-left: 40px;
+}
+
+.marker-kvadrat {
+    list-style-type: square;
+}
+
+.marker-krug {
+    list-style-type: circle;
+}
+
+.marker-rimski {
+    list-style-type: upper-roman;
+}
+
+.highlight {
+    color: #FFC107 !important; 
+}
+
+#main-title {
+    font-size: 4rem;
+}
