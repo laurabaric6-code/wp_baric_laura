@@ -7,24 +7,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>3. zadaća Web programiranje</title>
-    <!-- Google Fonts -->
+   
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Roboto:wght@400;600&display=swap" rel="stylesheet">
 
-    <!-- External CSS -->
+
     <link rel="stylesheet" href="style.css">
 
-    <!-- Internal CSS -->
     <style>
-        /* Treći paragraf – RGB boja */
+
+                #third-paragraph {
+            background-color: rgb(200, 230, 201);
+               }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 20px;           
+        }
+        .main-content {
+            background-color: #ECEFF1;
+            padding: 20px;
+        }
+
+        h1 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 3rem;
+            font-weight: 600;
+        }
+
+        h2 {
+            font-family: 'Roboto', sans-serif;
+            color: #4CAF50;
+        }
+
+        
+        #main-title {
+            font-size: 4rem;
+        }
+
+        p:nth-of-type(1) {
+            font-size: 16px;
+            color: #37474F;
+        }
+
+        p:nth-of-type(2) {
+            font-size: 18px;
+            color: #546E7A;
+        }
+
+        p:nth-of-type(3) {
+            font-size: 20px;
+            color: #78909C;
+        }
+
+        .highlight {
+            color: #FFC107;
+        }
+
+        ul {
+            list-style-type: square;
+        }
+
+        ul li:nth-child(2) {
+            list-style-type: circle;
+        }
+
+        ul li:nth-child(3) {
+            list-style-type: disc;
+        }
+
+        ul li:nth-child(4) {
+            list-style-type: none;
+        }
+
         #third-paragraph {
             background-color: rgb(200, 230, 201);
         }
     </style>
 </head>
 
-<!-- Inline CSS za cijeli dokument -->
 <body style="background-color: #FAFAFA;">
 
     <h1 id="main-title">Naslov knjige</h1>
@@ -35,7 +97,6 @@
             Ovo je prvi paragraf koji opisuje osnovne informacije o knjizi i njenom sadržaju.
         </p>
 
-        <!-- Inline CSS za drugi paragraf -->
         <p style="font-style: italic; color: #03A9F4;">
             Ovo je drugi paragraf koji je stiliziran pomoću inline CSS-a.
         </p>
@@ -47,7 +108,40 @@
         <h2>Sadržaj knjige</h2>
         <ul>
             <li>Poglavlje 1 - Uvod</li>
-            <li>Poglavlje 2 -  Osnove weba</li>
+            <li>Poglavlje 2 - Osnove weba</li>
+            <li>Poglavlje 3 - CSS stilizacija</li>
+            <li>Poglavlje 4 - JavaScript osnove</li>
+        </ul>
+    </div>
+
+</body>
+</html>
+
+    </style>
+</head>
+
+<body style="background-color: #FAFAFA;">
+
+    <h1 id="main-title">Naslov knjige</h1>
+    <h2>Poglavlje 1: Uvod</h2>
+
+    <div class="main-content">
+        <p class="highlight">
+            Ovo je prvi paragraf koji opisuje osnovne informacije o knjizi i njenom sadržaju.
+        </p>
+
+        <p style="font-style: italic; color: #03A9F4;">
+            Ovo je drugi paragraf koji je stiliziran pomoću inline CSS-a.
+        </p>
+
+        <p id="third-paragraph">
+            Ovo je treći paragraf koji koristi internal CSS i RGB sustav boja.
+        </p>
+
+        <h2>Sadržaj knjige</h2>
+        <ul>
+            <li>Poglavlje 1 - Uvod</li>
+            <li>Poglavlje 2 - Osnove weba</li>
             <li>Poglavlje 3 - CSS stilizacija</li>
             <li>Poglavlje 4 - JavaScript osnove</li>
         </ul>
