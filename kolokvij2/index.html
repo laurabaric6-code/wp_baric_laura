@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <title>Web programiranje, 2.kolovij</title>
+
+  <style>
+    .flag {
+      width: 300px;
+      height: 200px;
+      display: flex;
+      border: 2px solid #000;
+      margin-bottom: 40px;
+    }
+
+    .black {
+      background-color: black;
+      width: 33.33%;
+    }
+
+    .yellow {
+      background-color: yellow;
+      width: 33.33%;
+    }
+
+    .red {
+      background-color: red;
+      width: 33.33%;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      gap: 20px;
+      width: 500px;
+      height: 500px;
+      margin-bottom: 40px;
+    }
+
+    .item {
+      background-color: rgb(50, 128, 76);
+      border: 2px solid #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .box {
+      border: 1px solid black;
+      padding: 15px;
+      margin: 10px;
+      background-color: #f2f2f2;
+    }
+
+    .text-class {
+      color: rgb(221, 17, 17);
+      font-family: Arial, sans-serif;
+      margin: 15px;
+      padding: 10px;
+      background-color: #e6f0ff;
+    }
+
+    #unique-one {
+      color: rgb(19, 104, 202);
+      font-weight: bold;
+      margin: 18px;
+      padding: 11px;
+      background-color: #e6ffe6;
+    }
+
+    #unique-two {
+      color: rgb(201, 102, 9);
+      font-style: italic;
+      margin: 20px;
+      padding: 15px;
+      background-color: #ffe6e6;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Zastava Belgije</h2>
+  <div class="flag">
+    <div class="black"></div>
+    <div class="yellow"></div>
+    <div class="red"></div>
+  </div>
+
+  <h2>4x4 GRID</h2>
+  <div class="grid">
+    <div class="item">
+        Glavu gore i držite se uspravno.
+    </div>
+    <div class="item">
+        Odnosite se prema sebi kao prema nekome kome ste dužni pomoći.
+    </div>
+    <div class="item">
+        Sprijateljite se s ljudima koji vam žele najbolje.
+    </div>
+    <div class="item">
+        Uspoređujte sebe s onim što ste vi bili jučer
+    </div>
+    <div class="item">
+        Ne dopuštajte svojoj djeci da rade bilo što zbog čega vam se neće svidjeti.
+    </div>
+    <div class="item">
+        Prije nego što počnete kritizirati svijet, prvo vlastitu kuću dovedite u savršen red.
+    </div>
+    <div class="item">
+        Težite za onim što je smisleno, a ne za onim što je probitačno.
+    </div>
+    <div class="item">
+        Govorite istinu ili barem nemojte lagati.
+    </div>
+    <div class="item">
+        Pretpostavite da osoba koju slušate možda zna nešto što vi ne znate.
+    </div>
+    <div class="item">
+        Govorite precizno i jasno.
+    </div>
+    <div class="item">
+        Ne ometajte djecu dok se skejtaju.
+    </div>
+    <div class="item">
+        Pomilujte mačku kad je sretnete na cesti.
+    </div>
+    <div class="item">
+        ŽELIM VAM SRETAN BOŽIĆ
+    </div>
+    <div class="item">
+        I 
+    </div>
+    <div class="item">
+        USPIJEŠNU
+    </div>
+    <div class="item">
+        2026.
+    </div>
+  </div>
+
+  <h2>Model kutije</h2>
+    <div class="box">
+        Kutija 1
+    </div>
+  <div class="box">
+        Kutija 2
+    </div>
+  <div class="box">
+        Kutija 3
+    </div>
+  <div class="box">
+        Kutija 4
+    </div>
+
+  <h2>Klase i ID</h2>
+  <p class="text-class">
+        Paragraf s klasom 1
+    </p>
+  <p class="text-class">
+        Paragraf s klasom 2
+    </p>
+  <p class="text-class">
+        Paragraf s klasom 3
+    </p>
+
+    <p id="unique-one">
+        Paragraf s ID-om 1
+    </p>
+  <p id="unique-two">
+        Paragraf s ID-om 2
+    </p>
+
+    <script src "./index.js"> </script>
+</body>
+</html>
