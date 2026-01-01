@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <title>GastroElite v3.0 | 5. Zadaća</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* --- 1. KREATIVNE VARIJABLE --- */
+        :root {
+            --primarna: #d4af37; /* Zlatna */
+            --pozadina: #050505;
+            --kartica: rgba(255, 255, 255, 0.05);
+            --tekst: #e0e0e0;
+            --akcent: #ff3e3e;
+        }
+
+        /* --- 2. ELEMENT SELEKTORI --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            background-color: var(--pozadina); 
+            color: var(--tekst);
+            overflow-x: hidden;
+        }
+
+        /* --- 3. 12x12 GRID SUSTAV (Upute: Layout A, B, C) --- */
+        .grid-kontejner {
+            display: grid;
+            max-width: 1400px;
+            margin: 0 auto;
+            gap: 25px;
+            padding: 40px 20px;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(12, minmax(65px, auto));
+        }
+
+        /* --- 4. KLASA SELEKTORI (Pozicioniranje) --- */
+        
+        /* SEKCIJA A: Gornji dio (Header/Hero) */
+        .sekcija-a {
+            grid-column: 1 / 13;
+            grid-row: 1 / 4;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), 
+                        url('https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=1200');
+            background-size: cover;
+            background-position: center;
+            border: 1px solid rgba(211, 175, 55, 0.4);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* SEKCIJA B: Glavni dio recepata (Lijevo) */
+        .sekcija-b {
+            grid-column: 1 / 9;
+            grid-row: 4 / 13;
+            backdrop-filter: blur(5px);
+        }
+
+        /* SEKCIJA C: Sidebar (Desno) */
+        .sekcija-c {
+            grid-column: 9 / 13;
+            grid-row: 4 / 13;
+            background: var(--kartica);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+
+        /* --- 5. RESPONZIVNOST (Upute: Breakpoint 480px) --- */
+        @media (max-width: 480px) {
+            .grid-kontejner {
+                display: flex;
+                flex-direction: column;
+            }
+            .sekcija-a { height: 250px; }
+            .recept-info-grid { grid-template-columns: 1fr !important; }
+        }
+
+        /* --- 6. VIZUALNI DIZAJN --- */
+        h1 { 
+            font-family: 'Cormorant Garamond', serif; 
+            font-size: clamp(2.5rem, 6vw, 4.5rem); 
+            color: var(--primarna); 
+            text-transform: uppercase;
+            letter-spacing: 12px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+        }
+
+        /* ID SELEKTOR (Upute) */
+        #header-status {
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            color: #aaa;
+            margin-top: 15px;
+        }
+
+        .kartica-recepta {
+            background: var(--kartica);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            margin-bottom: 35px;
+            overflow: hidden;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .kartica-recepta:hover {
+            transform: translateY(-10px);
+            border-color: var(--primarna);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
+        }
+
+        .kartica-recepta img { width: 100%; height: 380px; object-fit: cover; }
+
+        .sadrzaj-recepta { padding: 30px; }
+        .sadrzaj-recepta h3 { 
+            font-family: 'Cormorant Garamond', serif; 
+            font-size: 2.2rem; 
+            color: var(--primarna);
+            margin-bottom: 15px;
+        }
+
+        .recept-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+            list-style: none;
+        }
+
+        .recept-info-grid li {
+            padding: 8px 15px;
+            background: rgba(255,255,255,0.03);
+            border-left: 2px solid var(--primarna);
+            font-size: 0.85rem;
+        }
+
+        /* FILTRIRANJE (Sidebar Gumbi) */
+        .gumb-filter {
+            display: block;
+            width: 100%;
+            padding: 20px;
+            background: transparent;
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 12px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            transition: 0.3s;
+            border-radius: 8px;
+        }
+
+        .gumb-filter:hover, .gumb-filter.active {
+            background: var(--primarna);
+            color: #000;
+            border-color: var(--primarna);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.8rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-kontejner">
+        
+        <header class="sekcija-a">
+            <h1>GastroElite</h1>
+            <p id="header-status">SIGNATURE RECIPES • EST. 2026</p>
+        </header>
+
+        <main class="sekcija-b" id="glavni-prikaz">
+            </main>
+
+        <aside class="sekcija-c">
+            <h2 style="font-family: 'Cormorant Garamond'; font-size: 1.8rem; margin-bottom: 25px; color: var(--primarna);">Chef's Selection</h2>
+            <div id="filteri">
+                <button class="gumb-filter active" onclick="filtriraj('SVE', this)">Svi Recepti</button>
+                <button class="gumb-filter" onclick="filtriraj('MESO', this)">Mesni Specijaliteti</button>
+                <button class="gumb-filter" onclick="filtriraj('MORE', this)">Plodovi Mora</button>
+                <button class="gumb-filter" onclick="filtriraj('SLATKO', this)">Artisan Deserti</button>
+            </div>
+
+            <div style="margin-top: 50px; padding: 20px; border-radius: 10px; background: rgba(212, 175, 55, 0.05); font-size: 0.75rem;">
+                <p style="color: var(--primarna); margin-bottom: 10px; font-weight: bold;">TEHNIČKE SPECIFIKACIJE:</p>
+                <p>• Grid 12x12 Layout</p>
+                <p>• Breakpoint: 480px (Responsive)</p>
+                <p>• Selektori: Element, Klasa, ID</p>
+            </div>
+        </aside>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 GASTROELITE PORTAL | 5. ZADAĆA | SVA PRAVA PRIDRŽANA</p>
+    </footer>
+
+    <script>
+        const receptiPodaci = [
+            {
+                naslov: "Wagyu Biftek u Umaku od Tartufa",
+                kat: "MESO",
+                slika: "https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?auto=compress&cs=tinysrgb&w=1260",
+                sastojci: ["A5 Wagyu govedina", "Crni istarski tartuf", "Demi-glace umak", "Morska sol s cvijetom soli"],
+                priprema: "Pecite steak do savršenog medium-rare stupnja. Tartufe ribajte pred posluživanje za maksimalnu aromu."
+            },
+            {
+                naslov: "Divlji Losos s Citrusnom Koricom",
+                kat: "MORE",
+                slika: "https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=1260",
+                sastojci: ["File divljeg lososa", "Domaći limun", "Hladno prešano maslinovo ulje", "Šparoge"],
+                priprema: "Lagano poširani losos s infuzijom agruma i mladim šparogama pečenim na grillu."
+            },
+            {
+                naslov: "Zlatni Čokoladni Fondant",
+                kat: "SLATKO",
+                slika: "https://images.pexels.com/photos/132694/pexels-photo-132694.jpeg?auto=compress&cs=tinysrgb&w=1260",
+                sastojci: ["70% Cacao čokolada", "Lješnjaci iz Pijemonta", "Bourbon vanilija", "Jestivo zlato"],
+                priprema: "Pecite točno 11 minuta na 210°C kako bi sredina ostala topla i tekuća."
+            }
+        ];
+
+        function filtriraj(kategorija, el) {
+            // Vizualna promjena gumba
+            document.querySelectorAll('.gumb-filter').forEach(g => g.classList.remove('active'));
+            el.classList.add('active');
+
+            const prikaz = document.getElementById('glavni-prikaz');
+            prikaz.innerHTML = "";
+
+            const filtrirani = kategorija === 'SVE' ? receptiPodaci : receptiPodaci.filter(r => r.kat === kategorija);
+
+            filtrirani.forEach((r, index) => {
+                prikaz.innerHTML += `
+                    <article class="kartica-recepta" style="animation: fadeIn 0.5s ease forwards ${index * 0.1}s; opacity: 0;">
+                        <img src="${r.slika}" alt="${r.naslov}">
+                        <div class="sadrzaj-recepta">
+                            <p style="color:var(--primarna); font-size:0.75rem; font-weight:bold; letter-spacing:2px;">${r.kat}</p>
+                            <h3>${r.naslov}</h3>
+                            <ul class="recept-info-grid">
+                                ${r.sastojci.map(s => `<li>${s}</li>`).join('')}
+                            </ul>
+                            <p style="color:#aaa; line-height:1.7;">${r.priprema}</p>
+                        </div>
+                    </article>
+                `;
+            });
+        }
+
+        // CSS Animacija za pojavljivanje recepata
+        const style = document.createElement('style');
+        style.innerHTML = `@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }`;
+        document.head.appendChild(style);
+
+        // Prvo učitavanje
+        filtriraj('SVE', document.querySelector('.gumb-filter'));
+    </script>
+</body>
+</html>
