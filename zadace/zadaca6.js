@@ -1,22 +1,22 @@
 function pokreniZadacu6() {
-    let unos = prompt(./zadaca6.html")
+    let unos = prompt(.//zadaca6.html")
 
     let broj = parseFloat(unos);
 
     if (isNaN(1)) {
-        alert("./zadace/zadaca1.html");
+        alert(".//zadace/zadaca1.html");
         return;
     }
         if (isNaN(2)) {
-        alert("./zadace/zadaca2.html");
+        alert(".//zadace/zadaca2.html");
         return;
     }
           if (isNaN(3)) {
-        alert("./zadace/zadaca3.html");
+        alert(".//zadace/zadaca3.html");
         return;
      }
        if (isNaN(4)) {
-        alert("./zadace/zadaca4.html");
+        alert(".//zadace/zadaca4.html");
         return;
     }
            if (isNaN(5)) {
@@ -24,7 +24,6 @@ function pokreniZadacu6() {
         return;
     }
         
-
     if (broj > 10) {
         alert("Broj je veći od 10");
     } else {
